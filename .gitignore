@@ -1,16 +1,19 @@
-# Node modules
+# Ignore node modules
 node_modules/
+server/node_modules/
 
-# Env files
+# Ignore environment files
 .env
+server/.env
 
-# Logs
-*.log
-
-# Build folders
+# Ignore build artifacts
 dist/
 build/
 
-# System files
+# Ignore logs
+*.log
+npm-debug.log*
+
+# Ignore OS generated files
 .DS_Store
 Thumbs.db
