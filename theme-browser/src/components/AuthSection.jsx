@@ -31,7 +31,7 @@ const AuthSection = () => {
     }
 
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_}/api/auth/signup`, {
+      const res = await axios.post("http://localhost:5000/api/auth/signup", {
         username: formData.username,
         email: formData.email,
         password: formData.password,
@@ -52,7 +52,7 @@ const AuthSection = () => {
     setError("");
 
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
         identifier: loginData.identifier,
         password: loginData.password,
       });
@@ -179,7 +179,7 @@ const AuthSection = () => {
                 required
               />
 
-              {/*  Forgot Password Link */}
+              {/* ✅ Forgot Password Link */}
               <p
                 onClick={() => setShowResetModal(true)}
                 className="text-xs text-blue-400 underline cursor-pointer hover:text-blue-300"
@@ -224,7 +224,7 @@ const AuthSection = () => {
         </form>
       </div>
 
-      {/*  Forgot Password Modal */}
+      {/* ✅ Forgot Password Modal */}
       {showResetModal && (
         <ForgotPasswordModal closeModal={() => setShowResetModal(false)} />
       )}
