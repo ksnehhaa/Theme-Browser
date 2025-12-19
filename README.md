@@ -8,9 +8,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
 # 🌐 Theme Browser
 
@@ -40,9 +37,59 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ---
 
-## 🚀 Getting Started
+## 🚀 How To Use
 
 ### 1. Clone the Repository
+Open your terminal and run:
+
+Bash:
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+###2. Configure Environment Variables (.env)
+Since sensitive information like database URLs and secrets are not uploaded to GitHub, you need to create your own environment file:
+Navigate to the server (backend) folder.
+Create a file named .env.
+Copy and paste the following template into the file and fill in your actual values:
+
+Plaintext:
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=any_random_secret_string
+
+Note: If you don't have a MongoDB string, you can get a free one at MongoDB Atlas.
+
+###3. Install Dependencies & Run Locally
+You need to start both the backend and the frontend.
+For the Backend:
+
+Bash:
+cd server
+npm install
+npm start
+
+For the Frontend:
+
+Bash:
+cd client
+npm install
+npm run dev
+
+###4. Browse the Website
+Once both servers are running, open your browser to http://localhost:5173 (or the URL shown in your terminal).
+You should see the landing page of the application.
+
+###5. Create an Account
+
+Click on the Signup button.
+Register with a username, email, and password.
+Note: The password is securely hashed using Argon2 before being saved to the database.
+
+###6. Explore & Upload
+
+Login: Use your new credentials to access your dashboard.
+Explore: Browse through the available features.
+Upload: Start uploading your content (ensure the backend is connected to see your data persist!).
 
 ```bash
 git clone https://github.com/your-username/theme-browser.git
